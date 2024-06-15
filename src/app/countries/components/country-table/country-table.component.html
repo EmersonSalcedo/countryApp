@@ -1,0 +1,67 @@
+@if (countries.length === 0) {
+  <div
+    class="p-4 mb-4 mx-2 md:mx-52 xl:mx-0 text-center text-sm text-yellow-800 rounded-lg bg-yellow-200 dark:bg-gray-800 dark:text-yellow-300"
+    role="alert">
+    <span class="font-medium">No hay paises para mostrar!</span>
+  </div>
+} @else {
+
+
+  <div
+    class="relative overflow-x-auto animate-border transition bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-0.5">
+    <table class="w-full text-sm text-left dark:bg-slate-900 bg-gray-200 rtl:text-right">
+      <thead class="text-xs uppercase">
+      <tr class="border-b">
+        <th scope="col" class="px-6 py-3">
+          #
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Abreviatura
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Bandera
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Nombre
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Capital
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Población
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (country of countries; track countries; let i = $index) {
+          <tr class="border-b">
+            <td class="px-6 py-3">
+              {{ i + 1 }}
+            </td>
+            <td class="px-6 py-3">
+              {{ country.flag }}
+            </td>
+            <td class="px-6 py-3">
+              <img class="w-3" [src]="country.flags.svg" [alt]="country.name.common">
+            </td>
+            <td class="px-6 py-3">
+              {{ country.name.common }}
+            </td>
+            <td class="px-6 py-3">
+              {{ country.capital }}
+
+            </td>
+            <td class="px-6 py-3">
+              {{ country.population | number }}
+            </td>
+            <td class="px-6 py-3 text-blue-500">
+              <a [routerLink]="['/countries/by',country.cca3]">Info</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+}
+

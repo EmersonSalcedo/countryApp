@@ -1,0 +1,9 @@
+<div class=" h-12 w-full animate-border transition p-1 rounded-lg mt-1.5 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%]">
+  <input
+    class="p-2 h-full w-full rounded-lg focus:outline-none placeholder-black dark:placeholder-white"
+    type="text"
+    [placeholder]="placeholder"
+    #txtSearch
+    (keyup.enter)="emitValue(txtSearch.value)"
+  />
+</div>

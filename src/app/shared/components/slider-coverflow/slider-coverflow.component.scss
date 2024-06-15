@@ -1,0 +1,42 @@
+$rotate-step: 40deg;
+$translateZ: 430px;
+
+.container {
+  position: relative;
+  width: 170px;
+  perspective: 2000px;
+
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+
+  transform-style: preserve-3d;
+  animation: rotate360 60s infinite forwards linear;
+}
+
+.image {
+  position: absolute;
+  width: 150px;
+  height: 93.5px;
+
+  background-size: cover;
+  display: flex;
+}
+
+@for $i from 1 through 10 { // Cambia 10 por el número máximo de hijos
+  .image:nth-child(#{$i}) {
+    transform: rotateY($rotate-step * ($i - 1)) translateZ($translateZ);
+  }
+}
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}

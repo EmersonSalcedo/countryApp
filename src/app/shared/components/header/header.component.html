@@ -1,20 +1,32 @@
-<header class="flex w-full h-screen text-center justify-center items-center flex-col">
-  <div class="wrapper space-y-10">
-    <h1
-      class="font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text md:text-9xl text-6xl">
-    </h1>
-
-    <nav class="flex w-full flex-row items-center justify-center space-x-10">
-      <button routerLink="countries/by-capital" class="animate-border transition inline-block rounded-md bg-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-1">
-        <span class="block rounded-md dark:bg-slate-900 bg-gray-200 md:px-5 md:py-3 px-3 py-1 font-bold" routerLinkActive="bg-opacity-0" [routerLinkActiveOptions]="{exact:true}"> Capital </span>
+<div class="w-full mx-auto px-4 border-b ">
+  <div class="items-start justify-center sm:justify-between py-4 md:flex">
+    <div>
+      <a routerLink="/home">
+        <h1
+          [style.view-transition-name]="'title'"
+          class="font-bold bg-gradient-to-r text-center from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text text-3xl">
+          Country SPA
+        </h1>
+      </a>
+    </div>
+    <nav [style.view-transition-name]="'navigation'" class="gap-x-3 mt-6 md:mt-0 flex justify-center">
+      <button routerLink="countries/by-capital"
+              class="animate-border transition inline-block bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-0.5">
+        <span class="block dark:bg-slate-900 bg-gray-200 md:px-2 md:py-1 px-3 py-1 font-bold"
+              routerLinkActive="bg-opacity-0 dark:bg-opacity-0"
+              [routerLinkActiveOptions]="{exact:true}"> Capital </span>
       </button>
-      <button routerLink="countries/by-country" class="animate-border transition inline-block rounded-md bg-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-1">
-        <span class="block rounded-md dark:bg-slate-900 bg-gray-200 md:px-5 md:py-3 px-3 py-1 font-bold" routerLinkActive="bg-opacity-0" [routerLinkActiveOptions]="{exact:true}"> Country </span>
+      <button routerLink="countries/by-country"
+              class="animate-border transition inline-block bg-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-0.5">
+        <span class="block dark:bg-slate-900 bg-gray-200 md:px-2 md:py-1 px-3 py-1 font-bold"
+              routerLinkActive="bg-opacity-0 dark:bg-opacity-0"
+              [routerLinkActiveOptions]="{exact:true}"> Country </span>
       </button>
-      <button routerLink="countries/by-region" class="animate-border transition inline-block rounded-md bg-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-1">
-        <span class="block rounded-md dark:bg-slate-900 bg-gray-200 md:px-5 md:py-3 px-3 py-1 font-bold" routerLinkActive="bg-opacity-0" [routerLinkActiveOptions]="{exact:true}"> Region </span>
+      <button routerLink="countries/by-region"
+              class="animate-border transition inline-block bg-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-0.5">
+        <span class="block dark:bg-slate-900 bg-gray-200 md:px-2 md:py-1 px-3 py-1 font-bold"
+              routerLinkActive="bg-opacity-0 dark:bg-opacity-0" [routerLinkActiveOptions]="{exact:true}"> Region </span>
       </button>
     </nav>
-
   </div>
-</header>
+</div>
