@@ -1,5 +1,4 @@
-@if (route != "/home"){
-  <shared-header></shared-header>
-}
+<shared-header [ngClass]="route === '/home'?'hidden':''"></shared-header>
+
 <router-outlet></router-outlet>
 
