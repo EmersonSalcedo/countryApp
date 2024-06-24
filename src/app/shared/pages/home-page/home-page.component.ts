@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CountriesService} from "../../../countries/services/countries.service";
 import {gsap} from "gsap";
 import {TextPlugin} from "gsap/TextPlugin";
+import {delay} from "rxjs";
 
 @Component({
   selector: 'shared-home-page',
@@ -23,12 +24,15 @@ export class HomePageComponent implements OnInit {
       });
   }
   ngOnInit(): void {
+    if( this.countryService.loadAnimation ) return;
     gsap.registerPlugin(TextPlugin);
     gsap.defaults({ease: "none"});
     let tl = gsap.timeline();
-    tl.to(".typing", {duration: 2, text:"Country SPA"})
-      .to(".wrapper", {duration: 2,ease:"bounce.out", y:-200})
+    tl.fromTo(".typing", {text:""},{duration: 2, text:"Country SPA"})
+      .fromTo(".wrapper",{y:0}, {duration: 2,ease:"bounce.out", y:-200})
       .fromTo(".fade", {opacity:0},{duration:0.5,opacity:1,ease: "bounce.out"})
-      .fromTo(".slider", {opacity:0,position:"absolute"},{duration:0.5,opacity:1,ease: "bounce.out"});
+      .fromTo(".slider", {opacity:0,position:"absolute"},{duration:0.5,opacity:1,ease: "bounce.out"})
+    delay(tl.totalDuration())
+    this.countryService.loadAnimation = true;
   }
 }

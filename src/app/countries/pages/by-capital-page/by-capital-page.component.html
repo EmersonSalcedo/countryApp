@@ -1,11 +1,14 @@
 <div class="flex flex-row justify-center">
   <div class="flex-col w-full md:w-1/2 xl:w-1/3 mx-2 md:mx-0">
-    <shared-search-box (onValue)="searchCapital($event)" placeholder="Buscar por capital"></shared-search-box>
+    <shared-search-box [initialValue]="initialValue" (onValue)="searchCapital($event)" placeholder="Buscar por capital"></shared-search-box>
   </div>
 </div>
 
 <div class="flex flex-row justify-center pt-5 w-full">
   <div class="flex-col w-full xl:w-fit">
+    @if(isLoading){
+      <shared-loading-spinner></shared-loading-spinner>
+    }
     <countries-table [countries]="countries"></countries-table>
   </div>
 </div>

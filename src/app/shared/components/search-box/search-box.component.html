@@ -4,6 +4,7 @@
     type="text"
     [placeholder]="placeholder"
     #txtSearch
-    (keyup.enter)="emitValue(txtSearch.value)"
+    (keyup)="onKeypress(txtSearch.value)"
+    [value]="initialValue"
   />
 </div>

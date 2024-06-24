@@ -1,8 +1,9 @@
 <header class="flex overflow-hidden w-full h-screen text-center justify-center items-center flex-col">
-  <div class="wrapper space-y-10">
+  <div class="wrapper space-y-10 translate-y-[-200px]">
     <h1
       [style.view-transition-name]="'title'"
       class="font-bold typing bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text md:text-9xl text-6xl">
+      Country SPA
     </h1>
 
     <nav [style.view-transition-name]="'navigation'" class="flex w-full fade flex-row items-center justify-center space-x-10">
@@ -17,7 +18,7 @@
       </button>
     </nav>
   </div>
-  <div class="w-full h-max hidden lg:flex justify-center items-center">
+  <div class="w-full h-max lg:flex justify-center items-center">
     <shared-slider-coverflow class="slider" [imagesSrc]="countriesFlags"></shared-slider-coverflow>
   </div>
 </header>

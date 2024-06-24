@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {RouterModule} from "@angular/router";
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { SliderCoverflowComponent } from './components/slider-coverflow/slider-coverflow.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 
@@ -15,7 +15,7 @@ import { HeroComponent } from './components/hero/hero.component';
     HeaderComponent,
     SearchBoxComponent,
     SliderCoverflowComponent,
-    HeroComponent
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,8 @@ import { HeroComponent } from './components/hero/hero.component';
   exports:[
     HomePageComponent,
     HeaderComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    LoadingSpinnerComponent,
   ]
 })
 export class SharedModule { }

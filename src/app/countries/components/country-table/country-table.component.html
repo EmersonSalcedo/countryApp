@@ -1,11 +1,12 @@
 @if (countries.length === 0) {
+
   <div
-    class="p-4 mb-4 mx-2 md:mx-52 xl:mx-0 text-center text-sm text-yellow-800 rounded-lg bg-yellow-200 dark:bg-gray-800 dark:text-yellow-300"
+    class="p-4 mb-4 w-full text-center text-sm text-yellow-800 rounded-lg bg-yellow-200 dark:bg-gray-800 dark:text-yellow-300"
     role="alert">
     <span class="font-medium">No hay paises para mostrar!</span>
   </div>
-} @else {
 
+} @else {
 
   <div
     class="relative overflow-x-auto animate-border transition bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-0.5">
@@ -34,7 +35,7 @@
       </thead>
       <tbody>
         @for (country of countries; track countries; let i = $index) {
-          <tr class="border-b">
+          <tr class="border-b border-black dark:border-white">
             <td class="px-6 py-3">
               {{ i + 1 }}
             </td>
