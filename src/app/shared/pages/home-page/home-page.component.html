@@ -1,12 +1,12 @@
 <header class="flex overflow-hidden w-full h-screen text-center justify-center items-center flex-col">
   <div class="wrapper space-y-10 translate-y-[-200px]">
     <h1
-      [style.view-transition-name]="'title'"
+      [style.view-transition-name]="!loadTransition?'title':''"
       class="font-bold typing bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text md:text-9xl text-6xl">
       Country SPA
     </h1>
 
-    <nav [style.view-transition-name]="'navigation'" class="flex w-full fade flex-row items-center justify-center space-x-10">
+    <nav [style.view-transition-name]="!loadTransition?'navigation':''" class="flex w-full fade flex-row items-center justify-center space-x-10">
       <button routerLink="/countries/by-capital" class="animate-border transition inline-block rounded-md bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-[length:400%_400%] p-1">
         <span class="block rounded-md dark:bg-slate-900 bg-gray-200 md:px-5 md:py-3 px-3 py-1 font-bold" routerLinkActive="bg-opacity-0 dark:bg-opacity-0" [routerLinkActiveOptions]="{exact:true}"> Capital </span>
       </button>

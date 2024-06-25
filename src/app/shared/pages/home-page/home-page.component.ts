@@ -10,6 +10,7 @@ import {delay} from "rxjs";
 })
 export class HomePageComponent implements OnInit {
   public countriesFlags: string[] = [];
+  public loadTransition:boolean = false;
 
   constructor(private countryService:CountriesService) {
     countryService.searchAll()
@@ -33,6 +34,7 @@ export class HomePageComponent implements OnInit {
       .fromTo(".fade", {opacity:0},{duration:0.5,opacity:1,ease: "bounce.out"})
       .fromTo(".slider", {opacity:0,position:"absolute"},{duration:0.5,opacity:1,ease: "bounce.out"})
     delay(tl.totalDuration())
+    this.loadTransition = true;
     this.countryService.loadAnimation = true;
   }
 }
